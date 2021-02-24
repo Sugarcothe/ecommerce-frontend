@@ -1,7 +1,8 @@
 import React , {useState}from 'react';
 import Layout from '../core/Layout';
 import {Link, Redirect} from 'react-router-dom';
-import {signin, authenticate} from '../auth/index';
+import {signin, authenticate, isAuthenticated} from '../auth/index';
+import jumboin from './img/burger.jpg'
 
  
 const Signin = () => {
@@ -16,6 +17,7 @@ const Signin = () => {
   });
 
 const { email, password, loading, error, redirectToReferrer } = values;
+const {user} = isAuthenticated()
 
  const handleChange = name => event => {
   setValues({...values, error: false, [name]: event.target.value})
@@ -82,7 +84,11 @@ const { email, password, loading, error, redirectToReferrer } = values;
 
  const redirectUser = () => {
    if(redirectToReferrer) {
-     return <Redirect to="/"/>
+    if(user && user.role === 1) {
+      return <Redirect to="/admin/dashboard"/>
+    } else {
+      return <Redirect to="/user/dashboard"/>
+    }
    }
  }
 
@@ -93,7 +99,7 @@ return (
     title ="SIGN IN" 
     description="Sign in to Node React E-commerce App"
     className="container jumbo col-md-8 offset-md-2"
-    
+    style={{ backgroundImage: `url(${jumboin})`}}
     >
       {showLoading()}
       {showError()}

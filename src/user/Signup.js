@@ -1,7 +1,8 @@
 import React , {useState}from 'react';
 import Layout from '../core/Layout';
 import {Link} from 'react-router-dom';
-import {signup} from '../auth/index'
+import {signup} from '../auth/index';
+import jumboup from './img/burger.jpg';
  
 const Signup = () => {
   const [values, setValues] = useState({
@@ -91,6 +92,7 @@ return (
     title ="SIGN UP" 
     description="Sign up to Node React E-commerce App"
     className="container col-md-8 offset-md-2"
+    style={{ backgroundImage: `url(${jumboup})`}}
     >
       {showSuccess()}
       {showError()}

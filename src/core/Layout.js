@@ -13,7 +13,7 @@ const Layout = ({
   <div>
     <Menu/>
     <div className="jumbotron"
-    style={{ backgroundImage: `url(${jumbobg})`}}
+    style={{ backgroundImage: `url(${jumbobg})` }}
     >
       <h2>{title}</h2>
       <p className='lead'>{description}</p>
