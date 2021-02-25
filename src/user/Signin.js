@@ -88,7 +88,10 @@ const {user} = isAuthenticated()
       return <Redirect to="/admin/dashboard"/>
     } else {
       return <Redirect to="/user/dashboard"/>
-    }
+    } 
+   }
+   if(isAuthenticated()) {
+     return <Redirect to="/user/dashboard"/>
    }
  }
 

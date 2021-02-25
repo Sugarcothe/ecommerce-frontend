@@ -4,7 +4,11 @@ import  Signup from './user/Signup';
 import  Signin from './user/Signin';
 import  Home from './core/Home';
 import PrivateRoute from './auth/PrivateRoute';
-import Dashboard from './user/UserDashboard'
+import AdminRoute from './auth/AdminRoute';
+import Dashboard from './user/UserDashboard';
+import AdminDashboard from './user/AdminDashboard'
+import AddCategory from './admin/addCategory'
+import AddProduct from './admin/AddProduct'
 
 
 const Routes = () => {
@@ -13,7 +17,33 @@ const Routes = () => {
       <Route path="/" exact component={Home}/>
       <Route path="/user/signin" exact component={Signin}/>
       <Route path="/signup" exact component={Signup}/>
-      <PrivateRoute path="/user/dashboard" exact component={Dashboard}></PrivateRoute>
+
+      <PrivateRoute 
+        path="/user/dashboard" 
+        exact 
+        component={Dashboard}>
+      </PrivateRoute>
+
+      <AdminRoute 
+        path="/admin/dashboard" 
+        exact 
+        component={AdminDashboard}>
+      </AdminRoute>
+
+      <AdminRoute 
+        path="/create/category" 
+        exact 
+        component={AddCategory}>
+      </AdminRoute>
+
+      <AdminRoute 
+        path="/create/product" 
+        exact 
+        component={AddProduct}>
+      </AdminRoute>
+
+
+
     </Switch>
   </BrowserRouter>)
 }

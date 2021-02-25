@@ -1,6 +1,6 @@
 import React from 'react';
 import Menu from './Menu'
-import jumbobg from '../user/img/AFRICA/abacha.png'
+import jumbobg from '../user/img/AFRICA/Jollof.jpg'
 
 const Layout = ({
 
