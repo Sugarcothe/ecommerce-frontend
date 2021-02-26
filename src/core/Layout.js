@@ -1,6 +1,7 @@
 import React from 'react';
-import Menu from './Menu'
-import jumbobg from '../user/img/AFRICA/Jollof.jpg'
+import Menu from './Menu';
+import jumbobg from '../user/img/AFRICA/Jollof.jpg';
+import '../styles.css'
 
 const Layout = ({
 
@@ -12,8 +13,8 @@ const Layout = ({
 
   <div>
     <Menu/>
-    <div className="jumbotron"
-    style={{ backgroundImage: `url(${jumbobg})` }}
+    <div className="jumbotron container-fluid"
+    style={{ backgroundImage: `url(${jumbobg})`, width: "100%" }}
     >
       <h2>{title}</h2>
       <p className='lead'>{description}</p>
